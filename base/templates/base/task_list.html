@@ -1,0 +1,55 @@
+{% extends 'base/main.html' %}
+{% block content %}
+
+<body>
+  <div class="task-items-wrapper">
+    <div class="header-bar">
+      <div>
+        <h1 style="font-weight: bolder;">Hey {{ request.user|title }}</h1>
+        <h3>You have {{ count }} incomplete task{{ count|pluralize:"s" }}</h3>
+      </div>
+  
+      <div id="search-add-wrapper">
+        <a class="btn btn-warning" id="add-link" href="{% url 'task-create' %}">&#43;Add Task</a>
+        <form id="search-media" class="form-inline my-2 my-lg-0" method="GET">
+          <input class="form-control mr-sm-2" type="text" name="search-area" value="{{ search_input }}">
+          <input id="search-media-button" class="btn btn-warning" type="submit" value="Search">
+        </form>
+      </div>
+    </div>
+
+    {% for task in tasks %}
+  
+    <div class="task-wrapper">
+  
+      {% if task.complete %}
+        <div class="task-title">
+          <a href="{% url 'task-incomplete' task.id %}"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0,0,256,256" width="40px" height="40px" fill-rule="nonzero"><g fill="#08c200" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(10.66667,10.66667)"><path d="M11,16.4l-4.7,-4.7l1.4,-1.4l3.3,3.3l8.4,-8.4c-1.9,-1.9 -4.5,-3.2 -7.4,-3.2c-5.5,0 -10,4.5 -10,10c0,5.5 4.5,10 10,10c5.5,0 10,-4.5 10,-10c0,-1.9 -0.5,-3.6 -1.4,-5.1z"></path></g></g></svg></a>
+          <a class="title-link-complete" href="{% url 'task-update' task.id %}">{{ task.title }}</a>
+        </div>
+        <a class="delete-link" href="{% url 'task-delete' task.id %}">&#215;</a>
+  
+      {% else %}
+        <div class="task-title">
+          <a href="{% url 'task-complete' task.id %}"><svg  version="1.0" xmlns="http://www.w3.org/2000/svg"  width="30.000000pt" height="30.000000pt" viewBox="0 0 30.000000 30.000000"  preserveAspectRatio="xMidYMid meet">  <g transform="translate(0.000000,30.000000) scale(0.050000,-0.050000)" fill="#ffbb00" stroke="none"> <path d="M175 509 c-152 -83 -150 -339 4 -419 168 -87 361 25 361 210 0 185 -199 299 -365 209z m263 -80 c68 -65 66 -194 -3 -264 -120 -119 -320 -35 -320 134 0 178 192 255 323 130z"/> </g> </svg> </a>
+          <a class="title-link-incomplete" href="{% url 'task-update' task.id %}">{{ task.title }}</a>
+        </div>
+        <a class="delete-link" href="{% url 'task-delete' task.id %}">&#215;</a>
+      
+      {% endif %}
+  
+    </div>
+  
+    {% empty %}
+      <div class="task-wrapper">
+        <h3>No task</h3>
+      </div>
+      
+  
+    {% endfor %}
+  
+  </div>
+</body>
+
+
+{% endblock content %}

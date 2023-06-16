@@ -1,0 +1,20 @@
+{% extends 'base/main.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+
+<body>
+  <div class="task-form-container">
+    <div class="task-form-wrapper">
+      <form method="POST" action="">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <input class="btn btn-warning" type="submit" value="Submit">
+      </form>
+      <br/>
+      <a href="{% url 'tasks' %}"><button class="btn btn-primary">Back</button></a>
+    </div>
+  </div>
+</body>
+
+
+{% endblock content %}

@@ -1,0 +1,62 @@
+{% extends 'base/main.html' %}
+{% load static %}
+{% block content %}
+
+
+
+
+<body>
+  <div class="home-hero">
+    <div class="home-container">
+      <img class="taskmate-logo-hero" src="https://img.icons8.com/?size=512&id=LFB02ASKjxl3&format=png">
+      <div>
+        <h1>TaskMate</h1>
+        <h5>Your Ultimate Task Management Companion</h5>
+      </div>
+    </div>
+  </div>
+
+  <div class="home-info-item-container" style="background-color: rgb(255, 231, 124);">
+    <div class="home-info-item-wrapper">
+      <h1>All Your Task In One View</h1>
+      <h5>Very simple and easy to read!</h5>
+    </div>
+    <img class="task-list-img" src="{% static 'base/img/tasklist.PNG' %}">
+  </div>
+
+  <div class="home-info-item-container2" style="background-color: rgb(255, 228, 106);">
+    <img class="task-list-img" src="{% static 'base/img/addtask.PNG' %}">
+    <div class="home-info-item-wrapper">
+      <h1>Simply click "Add Task"</h1>
+      <h5>And enter whatever task you want!</h5>
+    </div>
+  </div>
+
+  <div class="home-info-item-container" style="background-color: rgb(255, 225, 90);">
+    <div class="home-info-item-wrapper">
+      <h1>Need to search a task?</h1>
+      <h5>Just type it in!</h5>
+    </div>
+    <img class="task-list-img" src="{% static 'base/img/search.PNG' %}">
+  </div>
+
+  <div class="home-info-item-container2" style="background-color: rgb(255, 222, 73);">
+    <img class="task-list-img" src="{% static 'base/img/detail.PNG' %}">
+    <div class="home-info-item-wrapper">
+      <h1>Forgot the description?</h1>
+      <h5>Click on the task and add one!</h5>
+      <img class="task-list-img2" src="{% static 'base/img/clickdetail.PNG' %}">
+    </div>
+  </div>
+
+  
+
+  <div class="home-info-item-container" style="background-color: rgb(255, 216, 44);">
+    <div class="home-info-item-wrapper">
+      <h1>Already have an account? <a id="login-register-text" href="{% url 'login' %}">Login</a></h1>
+      <h1>Don't have an account? <a id="login-register-text" href="{% url 'register' %}">Register</a></h1>
+    </div>
+  </div>
+</body>
+
+{% endblock content %}
