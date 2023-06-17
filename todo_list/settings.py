@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'base.apps.BaseConfig',
     'crispy_forms',
     'crispy_bootstrap4',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -152,3 +153,9 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = os.getenv('EMAIL_USER')
 EMAIL_HOST_PASSWORD = os.getenv('EMAIL_PASS')
 
+AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME = 'taskmate-static-django'
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+AWS_S3_CUSTOM_DOMAIN = 'taskmate-static-django.s3.amazonaws.com'
