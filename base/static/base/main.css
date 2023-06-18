@@ -1,0 +1,290 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Libre Franklin', sans-serif;
+}
+
+
+
+/* BACKGROUND COLORS */
+body {
+  background-color: rgb(255, 255, 255);
+}
+
+.home-background {
+  background-color: rgb(255, 208, 0);
+}
+
+.navbar-custom {
+  background-color: rgb(255, 247, 204);
+}
+
+
+
+/* NAVBAR CSS */
+.navbar-light .navbar-nav .nav-link {
+  color: rgb(0, 0, 0);
+}
+
+.navbar {
+  margin-left: 100px; 
+  margin-right: 100px;
+}
+
+.image-logo {
+  height: 30px;
+}
+
+
+
+/* HOME PAGE CSS */
+.home-hero {
+  background-color: rgb(255, 242, 169);
+}
+
+.home-container {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-info-item-container {
+  padding: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.home-info-item-container2 {
+  padding: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.home-info-item-wrapper {
+  padding: 20px;
+}
+
+.taskmate-logo-hero {
+  width: 30%;
+}
+
+.task-list-img {
+  width: 35%;
+  border-radius: 10px;
+}
+
+.task-list-img2 {
+  width: 50%;
+  border-radius: 10px;
+}
+
+
+
+/* TASK LIST CSS */
+.task-items-wrapper {
+  background-color: rgb(255, 254, 248);
+  border-radius: 10px;
+  max-width: 900px;
+  margin: auto;
+  margin-top: 50px;
+}
+
+.header-bar {
+  text-align: center;
+  padding-top: 20px;
+  margin: 20px;
+  
+}
+
+.task-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #fffbed;
+  border-top: 1px solid rgb(255, 247, 204);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.task-title {
+  display: flex;
+  align-items: center;
+}
+
+.task-title a {
+  margin-right: 30px;
+}
+
+.title-link-complete {
+  color: rgb(0, 0, 0);
+  font-size: 24px;
+  text-decoration: line-through;
+}
+
+.title-link-incomplete {
+  color: rgb(0, 0, 0);
+  font-size: 24px;
+}
+
+.title-link-incomplete:hover {
+  color: orange;
+  text-decoration: none;
+}
+
+.title-link-complete:hover {
+  color: orange;
+  text-decoration: line-through;
+}
+
+.delete-link {
+  text-decoration: none;
+  font-weight: 900;
+  font-size: 30px;
+  line-height: 0;
+  color: red;
+}
+
+.delete-link:hover {
+  text-decoration: none;
+}
+
+#search-add-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+#add-link {
+  text-decoration: none;
+  font-size: 16px;
+  color: black;
+}
+
+
+
+/* TASK FORM CSS */
+.task-form-container {
+  margin-top: 30px;
+}
+
+.task-form-wrapper {
+  background-color: rgb(255, 242, 169);
+  padding: 30px;
+  max-width: 600px;
+  margin: auto;
+  border-radius: 10px;
+}
+
+
+
+/* LOGIN-REGISTER-PASSWORD CSS */
+.login-register-container {
+  max-width: 500px;
+  margin: auto;
+  margin-top: 30px;
+  padding: 50px;
+  background-color: rgb(255, 242, 169);
+  border-radius: 10px;
+}
+
+.login-register-text-container {
+  margin-top: 10px;
+}
+
+#login-register-text {
+  text-decoration: none;
+}
+
+
+
+/* ABOUT PAGE CSS */
+.about-wrapper {
+  background-color: rgb(255, 242, 169);
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
+  border-radius: 10px;
+  margin-top: 30px;
+}
+
+
+
+@media screen and (max-width: 600px) {
+  .navbar {
+    margin-left: 0px; 
+    margin-right: 0px;
+  }
+
+  .navbar-light .navbar-nav .nav-link {
+    color: rgb(0, 0, 0);
+    text-align: center;
+  }
+
+  .navbar-brand {
+    font-size: 80%;
+  }
+
+  .taskmate-logo-hero {
+    width: 50%;
+  }
+
+  .task-list-img {
+    height: 100%;
+    border-radius: 10px;
+    width: 80%;
+  }
+
+  .home-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .home-info-item-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .home-info-item-container2 {
+    display: flex;
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .task-items-wrapper {
+    margin-top: 0px;
+  }
+
+  #search-add-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #search-media {
+    padding-top: 30px;
+    justify-content: space-evenly;
+    max-width: 70%;
+  }
+
+  .form-control {
+    margin: 10px;
+  }
+
+
+  h1 {
+    font-size: 100%;
+  }
+  h3 {
+    font-size: 80%;
+  }
+  h5 {
+    font-size: 80%;
+  }
+}

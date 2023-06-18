@@ -72,7 +72,7 @@ class TaskList(LoginRequiredMixin, ListView): # looks for name_list.html or have
         search_input = self.request.GET.get('search-area') or ''
 
         if search_input:
-            context['tasks'] = context['tasks'].filter(title__startswith=search_input)
+            context['tasks'] = context['tasks'].filter(title__istartswith=search_input)
 
         context['search_input'] = search_input # this is for the html page for value
 
